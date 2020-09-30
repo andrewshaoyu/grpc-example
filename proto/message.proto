@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package go_protoc;
+
+message Msg {
+  string from = 1;
+  string to = 2;
+  string body = 3;
+  string type = 4;
+}
+
+service ChatService {
+  rpc Chat (stream Msg) returns (stream Msg);
+}
